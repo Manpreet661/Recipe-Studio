@@ -1,0 +1,843 @@
+:root {
+
+    --bg: #fbe3e5;
+    --card: rgba(255,255,255,0.65);
+
+    --primary: #ff8fa3;
+    --secondary: #ffc8a2;
+
+    --accent: #f98484;
+
+    --text: #3d3030;
+    --muted: #786767;
+
+    --shadow:
+    0 20px 40px rgba(120,70,80,0.12);
+
+    --glass:
+    backdrop-filter: blur(20px);
+
+}
+
+
+.dark {
+
+    --bg:#201726;
+
+    --card:
+    rgba(255,255,255,0.08);
+
+    --primary:#ff8fab;
+
+    --secondary:#d8a7ff;
+
+    --accent:#ffca85;
+
+    --text:#f8edf0;
+
+    --muted:#c8b7c0;
+
+    --shadow:
+    0 20px 40px rgba(0,0,0,.5);
+
+}
+
+
+
+
+
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
+
+body {
+
+    font-family:
+    "Poppins",
+    sans-serif;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--bg),
+    #fff5f6
+    );
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    transition:.4s;
+
+}
+
+
+.dark body {
+
+    background:
+    linear-gradient(
+    135deg,
+    #211827,
+    #30203c
+    );
+
+}
+
+
+
+
+
+/* Loader */
+
+
+.loader {
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    var(--bg);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+
+.spinner {
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:6px solid #ffffff;
+
+    border-top-color:
+    var(--primary);
+
+    animation:
+    spin 1s linear infinite;
+
+}
+
+
+
+@keyframes spin {
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+
+
+
+/* Navbar */
+
+
+.navbar {
+
+    width:90%;
+
+    margin:25px auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+
+    border-radius:30px;
+
+    background:
+    var(--card);
+
+    box-shadow:
+    var(--shadow);
+
+    backdrop-filter:
+    blur(20px);
+
+    position:sticky;
+
+    top:15px;
+
+    z-index:50;
+
+}
+
+
+.logo {
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+
+nav {
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+
+nav a {
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-weight:500;
+
+}
+
+
+
+.theme-btn {
+
+    border:none;
+
+    background:
+    var(--primary);
+
+    padding:12px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+}
+
+
+
+
+
+
+
+/* Hero */
+
+
+.hero {
+
+    width:90%;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 420px;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+
+
+.hero h1 {
+
+    font-size:
+    clamp(3rem,6vw,5.5rem);
+
+    line-height:1;
+
+}
+
+
+
+.hero h1 span {
+
+
+    display:block;
+
+    font-family:
+    "Pacifico";
+
+    color:
+    var(--primary);
+
+}
+
+
+
+.hero p {
+
+    margin:25px 0;
+
+    color:var(--muted);
+
+    max-width:500px;
+
+}
+
+
+
+button {
+
+    border:none;
+
+    cursor:pointer;
+
+    background:
+    var(--primary);
+
+    color:white;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover {
+
+    transform:
+    translateY(-4px);
+
+}
+
+
+
+
+
+/* Recipe Day Card */
+
+
+.recipe-day-card {
+
+
+    background:
+    var(--card);
+
+    border-radius:40px;
+
+    padding:20px;
+
+    box-shadow:
+    var(--shadow);
+
+    backdrop-filter:
+    blur(20px);
+
+    animation:
+    float 4s infinite ease-in-out;
+
+}
+
+
+
+@keyframes float {
+
+    50%{
+        transform:
+        translateY(-15px);
+    }
+
+}
+
+
+
+.recipe-day-card img {
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+}
+
+
+
+.badge {
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    background:
+    var(--secondary);
+
+    border-radius:20px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+/* Sections */
+
+
+section {
+
+    width:90%;
+
+    margin:80px auto;
+
+}
+
+
+section h2 {
+
+    font-size:2rem;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+
+
+/* Search */
+
+
+.search-box input {
+
+    width:100%;
+
+    padding:20px;
+
+    border-radius:30px;
+
+    border:none;
+
+    outline:none;
+
+    background:
+    var(--card);
+
+    box-shadow:
+    var(--shadow);
+
+    color:var(--text);
+
+    font-size:1rem;
+
+}
+
+
+
+.filters {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin:25px 0;
+
+}
+
+
+
+.filter {
+
+    background:
+    var(--card);
+
+    color:var(--text);
+
+}
+
+
+
+.filter.active {
+
+    background:
+    var(--primary);
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+/* Recipe Grid */
+
+
+.recipe-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.recipe-card {
+
+
+    background:
+    var(--card);
+
+    padding:18px;
+
+    border-radius:30px;
+
+    box-shadow:
+    var(--shadow);
+
+    transition:.35s;
+
+    backdrop-filter:
+    blur(20px);
+
+}
+
+
+.recipe-card:hover {
+
+    transform:
+    translateY(-10px);
+
+}
+
+
+
+.recipe-card img {
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+}
+
+
+
+
+
+
+
+/* Recent */
+
+
+.recent-row {
+
+    display:flex;
+
+    gap:20px;
+
+    overflow-x:auto;
+
+}
+
+
+
+.recent-row .recipe-card {
+
+    min-width:220px;
+
+}
+
+
+
+
+
+
+
+/* Planner */
+
+
+.planner-grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(160px,1fr));
+
+    gap:20px;
+
+}
+
+
+
+.day {
+
+
+    background:
+    var(--card);
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+.day select {
+
+
+    margin-top:15px;
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    border:none;
+
+}
+
+
+
+
+
+.shopping-card {
+
+    background:
+    var(--card);
+
+    padding:30px;
+
+    border-radius:30px;
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+
+
+
+/* Modal */
+
+
+.modal {
+
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.5);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:100;
+
+
+}
+
+
+
+.modal.show {
+
+    display:flex;
+
+}
+
+
+
+.modal-content {
+
+    width:min(90%,600px);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:
+    var(--bg);
+
+    padding:35px;
+
+    border-radius:35px;
+
+    position:relative;
+
+}
+
+
+
+.modal-content img {
+
+    width:100%;
+
+    border-radius:25px;
+
+}
+
+
+
+.close-modal {
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+}
+
+
+
+.timer {
+
+    margin-top:30px;
+
+    text-align:center;
+
+}
+
+
+
+#timerDisplay {
+
+    font-size:3rem;
+
+    margin:20px;
+
+}
+
+
+
+.timer-buttons {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+
+
+
+
+
+footer {
+
+    text-align:center;
+
+    padding:30px;
+
+    color:var(--muted);
+
+}
+
+
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:900px){
+
+
+.hero {
+
+grid-template-columns:1fr;
+
+}
+
+
+nav {
+
+display:none;
+
+}
+
+
+}
+
+
+@media(max-width:500px){
+
+
+.navbar {
+
+padding:15px;
+
+}
+
+
+.hero {
+
+margin-top:30px;
+
+}
+
+
+.recipe-day-card img {
+
+height:230px;
+
+}
+
+
+}

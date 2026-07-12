@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recipe Studio 🍓</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Cooking your recipes...</p>
+</div>
+
+
+<!-- Navbar -->
+<header class="navbar">
+
+    <div class="logo">
+        🍓 Recipe Studio
+    </div>
+
+
+    <nav>
+        <a href="#explore">Explore</a>
+        <a href="#planner">Planner</a>
+        <a href="#favorites">Favorites</a>
+    </nav>
+
+
+    <button class="theme-btn" id="themeToggle">
+        🌙
+    </button>
+
+</header>
+
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <h1>
+            Choose Your
+            <span>Taste</span>
+        </h1>
+
+
+        <p>
+            Discover delicious recipes, plan meals,
+            and create your perfect cooking journey.
+        </p>
+
+
+        <button id="randomRecipe">
+            ✨ Random Recipe
+        </button>
+
+
+    </div>
+
+
+
+    <!-- Recipe Of Day Card -->
+
+    <div class="recipe-day-card">
+
+        <span class="badge">
+            Recipe Of The Day
+        </span>
+
+
+        <img id="heroImage"
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+        alt="Recipe">
+
+
+        <div class="recipe-info">
+
+            <h2 id="heroTitle">
+                Loading...
+            </h2>
+
+            <p id="heroCategory">
+                Delicious meal
+            </p>
+
+
+            <button id="openHeroRecipe">
+                View Recipe →
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+<!-- Search Section -->
+
+<section class="explore" id="explore">
+
+
+<h2>
+    Explore Recipes
+</h2>
+
+
+<div class="search-box">
+
+
+<input 
+id="searchInput"
+type="text"
+placeholder="Search your favorite recipe..."
+>
+
+
+</div>
+
+
+
+<div class="filters">
+
+<button class="filter active" data-category="All">
+All
+</button>
+
+
+<button class="filter" data-category="Breakfast">
+Breakfast
+</button>
+
+
+<button class="filter" data-category="Lunch">
+Lunch
+</button>
+
+
+<button class="filter" data-category="Dinner">
+Dinner
+</button>
+
+
+<button class="filter" data-category="Dessert">
+Dessert
+</button>
+
+
+</div>
+
+
+
+<div class="recipe-grid" id="recipeGrid">
+
+<!-- Dynamic recipe cards -->
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Recently Viewed -->
+
+<section class="recent-section">
+
+
+<h2>
+Recently Viewed
+</h2>
+
+
+<div class="recent-row" id="recentRecipes">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Favorites -->
+
+<section id="favorites">
+
+
+<h2>
+❤️ Favorite Recipes
+</h2>
+
+
+<div class="recipe-grid" id="favoriteGrid">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Weekly Planner -->
+
+
+<section class="planner" id="planner">
+
+
+<h2>
+📅 Weekly Meal Planner
+</h2>
+
+
+
+<div class="planner-grid">
+
+
+<div class="day">
+<h3>Monday</h3>
+<select data-day="Monday"></select>
+</div>
+
+
+<div class="day">
+<h3>Tuesday</h3>
+<select data-day="Tuesday"></select>
+</div>
+
+
+<div class="day">
+<h3>Wednesday</h3>
+<select data-day="Wednesday"></select>
+</div>
+
+
+<div class="day">
+<h3>Thursday</h3>
+<select data-day="Thursday"></select>
+</div>
+
+
+<div class="day">
+<h3>Friday</h3>
+<select data-day="Friday"></select>
+</div>
+
+
+<div class="day">
+<h3>Saturday</h3>
+<select data-day="Saturday"></select>
+</div>
+
+
+<div class="day">
+<h3>Sunday</h3>
+<select data-day="Sunday"></select>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<h2>
+🛒 Shopping List
+</h2>
+
+
+<div class="shopping-card">
+
+
+<ul id="shoppingList">
+
+</ul>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Recipe Modal -->
+
+<div class="modal" id="recipeModal">
+
+
+<div class="modal-content">
+
+
+<button class="close-modal" id="closeModal">
+×
+</button>
+
+
+<img id="modalImage" src="">
+
+
+
+<h2 id="modalTitle">
+Recipe Name
+</h2>
+
+
+<p id="modalTime">
+Cooking Time
+</p>
+
+
+
+<h3>
+Ingredients
+</h3>
+
+<ul id="ingredients">
+
+</ul>
+
+
+
+<h3>
+Steps
+</h3>
+
+<ol id="steps">
+
+</ol>
+
+
+
+
+
+<!-- Timer -->
+
+<div class="timer">
+
+
+<h3>
+Cooking Timer
+</h3>
+
+
+<div id="timerDisplay">
+00:00
+</div>
+
+
+
+<div class="timer-buttons">
+
+
+<button id="startTimer">
+Start
+</button>
+
+
+<button id="pauseTimer">
+Pause
+</button>
+
+
+<button id="resetTimer">
+Reset
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<button id="favoriteBtn">
+❤️ Add Favorite
+</button>
+
+
+<button id="shareBtn">
+🔗 Share Recipe
+</button>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+Made with 🍓 Recipe Studio © 2026
+</p>
+
+</footer>
+
+
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
